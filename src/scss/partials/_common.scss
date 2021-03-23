@@ -13,10 +13,11 @@ body {
 
 body {
 	font-family: Tahoma, sans-serif;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	line-height: 1.5;
 	margin: 0;
-	background: $gray-100;
+	background: $white;
+	color: $white;
 }
 
 * {
@@ -36,7 +37,7 @@ ul {
 }
 
 p {
-	margin: 1em 0;
+	margin: 1.2em 0;
 	line-height: $line-height-base;
 }
 
@@ -50,13 +51,16 @@ small {
 
 a {
 	cursor: pointer;
-	color: $primary;
+	color: $white;
 	text-decoration: underline;
-
+	@include transit-fast();
 	&:hover,
 	&:focus {
 		text-decoration: none;
-		color: rgba($primary, 0.8);
+		color: rgba($white, 0.8);
+	}
+	&.verdana {
+		font-family: Verdana, sans-serif;
 	}
 }
 
@@ -73,14 +77,20 @@ h4,
 h5,
 h6 {
 	margin: 2rem 0;
-	font-family: $headings-font-family;
 	font-weight: $headings-font-weight;
 	line-height: $headings-line-height;
-	color: $headings-color;
+}
+h1,
+.h1 {
+	font-size: $h1-font-size;
+	font-family: Verdana, sans-serif;
+	font-weight: $font-weight-normal;
+}
 
-	&:hover {
-		color: $headings-color;
-	}
+h2,
+.h2 {
+	font-size: $h2-font-size;
+	font-weight: $font-weight-normal;
 }
 
 .h1,
@@ -112,5 +122,79 @@ label {
 	&::-webkit-scrollbar-thumb {
 		background: lighten($light, 10);
 		border-radius: 2px;
+	}
+}
+
+.main-wrapper {
+	@extend .container;
+	@include flex();
+	@include flex-direction(column);
+	height: 100%;
+	header {
+		background-color: $primary;
+		padding: 6.5rem 1rem 0 1rem;
+		position: relative;
+		.logo {
+			position: absolute;
+			left: 0;
+			top: 15px;
+			z-index: 1;
+		}
+		nav {
+			.nav {
+				.nav-item {
+					background-color: $secondary;
+					margin: 0 0.2rem;
+					&:hover,
+					&:focus {
+						.nav-link {
+							color: $secondary;
+						}
+					}
+					.nav-link {
+						padding: 1rem 3.2rem 0.4rem;
+						font-size: $h3-font-size;
+						text-decoration: none;
+					}
+				}
+			}
+			.dropdown-menu {
+				background-color: $secondary;
+				.dropdown-item {
+					color: $white;
+					font-size: $h4-font-size;
+					text-decoration: none;
+					border-bottom: 1px solid white;
+					&:last-child {
+						border-bottom: 0;
+					}
+					&:hover,
+					&:focus {
+						color: $secondary;
+					}
+				}
+			}
+		}
+	}
+	main {
+		.row {
+			height: 100%;
+		}
+		flex-grow: 2;
+		section {
+			background-color: $primary;
+			border: 1rem solid $secondary;
+		}
+		article {
+			background-color: #022929;
+			border: 1rem solid #055252;
+		}
+	}
+	footer {
+		background-color: $secondary;
+		color: $white;
+	}
+	hr {
+		background-color: #616f6f;
 	}
 }
