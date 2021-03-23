@@ -1,13 +1,12 @@
-// @import "node_modules/bootstrap/scss/bootstrap";
-@import "./partials/variables";
-
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/mixins";
-@import "./partials/variables";
-@import "./partials/mixins";
-@import "./partials/flexbox";
+@import "./variables";
+@import "./mixins";
+@import "./flexbox";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/type";
-@import "./partials/common";
+@import "./fonts";
+@import "./common";
+@import "./material/material";

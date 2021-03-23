@@ -1,0 +1,43 @@
+@mixin transition($value: all 0.3s) {
+    transition: $value;
+}
+
+@mixin transit-fast() {
+    -webkit-transition: all 0.55s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.55s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* --------------------------------------------- Misc transform mixins */
+
+@mixin transform($prop, $important: false) {
+    $imp: "";
+
+    @if ($important) {
+        $imp: "!important";
+    }
+
+    -webkit-transform: $prop #{$imp};
+    transform: $prop #{$imp};
+}
+
+@mixin transform-origin($x, $y) {
+    -webkit-transform-origin: $x $y;
+    transform-origin: $x $y;
+}
+
+@function liveurl($url) {
+    @return #{"url(" + $url + $build_version + ")"};
+}
+
+@mixin bg-size($var) {
+    background-size: $var;
+    -webkit-background-size: $var;
+    -o-background-size: $var;
+    -ms-background-size: $var;
+}
+
+@mixin bg-center() {
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include bg-size(cover);
+}

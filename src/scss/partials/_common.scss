@@ -1,0 +1,116 @@
+html {
+	box-sizing: border-box;
+	height: 100%;
+
+	// *** Rem size base
+	font-size: 10px;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-family: Tahoma, sans-serif;
+	font-size: 1.5rem;
+	line-height: 1.5;
+	margin: 0;
+	background: $gray-100;
+}
+
+* {
+	&:active,
+	:focus {
+		outline: none !important; // 1
+	}
+}
+
+ul {
+	padding: 0;
+
+	li {
+		list-style: none;
+		margin-bottom: $spacer;
+	}
+}
+
+p {
+	margin: 1em 0;
+	line-height: $line-height-base;
+}
+
+small {
+	p {
+		line-height: $line-height-sm;
+		font-size: $h6-font-size;
+		color: $gray-600;
+	}
+}
+
+a {
+	cursor: pointer;
+	color: $primary;
+	text-decoration: underline;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: rgba($primary, 0.8);
+	}
+}
+
+.cursor-pointer {
+	cursor: pointer;
+	-webkit-transition: $transition;
+	transition: $transition;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 2rem 0;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	line-height: $headings-line-height;
+	color: $headings-color;
+
+	&:hover {
+		color: $headings-color;
+	}
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	margin: 2rem 0;
+	font-weight: $font-weight-normal;
+	// line-height: 1.5;
+}
+
+label {
+	font-size: $h4-font-size;
+	color: $dark;
+	font-weight: $font-weight-semibold;
+}
+
+* {
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $white;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: lighten($light, 10);
+		border-radius: 2px;
+	}
+}
