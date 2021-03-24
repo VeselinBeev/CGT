@@ -139,12 +139,26 @@ label {
 			left: 0;
 			top: 15px;
 			z-index: 1;
+			@include media-breakpoint-down(lg) {
+				position: fixed;
+			}
 		}
 		nav {
 			.nav {
+				@include media-breakpoint-down(lg) {
+					@include flex-direction(column);
+					@include align-items(flex-start);
+					padding-left: 20px;
+				}
 				.nav-item {
 					background-color: $secondary;
 					margin: 0 0.2rem;
+					@include media-breakpoint-down(lg) {
+						margin: 0.1rem 0.2rem;
+						text-align: left;
+						width: 50%;
+						min-width: 120px;
+					}
 					&:hover,
 					&:focus {
 						.nav-link {

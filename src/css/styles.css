@@ -7489,9 +7489,28 @@ label {
       left: 0;
       top: 15px;
       z-index: 1; }
+      @media (max-width: 1199.98px) {
+        .main-wrapper header .logo {
+          position: fixed; } }
+    @media (max-width: 1199.98px) {
+      .main-wrapper header nav .nav {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: flex-start;
+        -ms-flex-align: flex-start;
+        align-items: flex-start;
+        padding-left: 20px; } }
     .main-wrapper header nav .nav .nav-item {
       background-color: #066666;
       margin: 0 0.2rem; }
+      @media (max-width: 1199.98px) {
+        .main-wrapper header nav .nav .nav-item {
+          margin: 0.1rem 0.2rem;
+          text-align: left;
+          width: 50%;
+          min-width: 120px; } }
       .main-wrapper header nav .nav .nav-item:hover .nav-link, .main-wrapper header nav .nav .nav-item:focus .nav-link {
         color: #066666; }
       .main-wrapper header nav .nav .nav-item .nav-link {
